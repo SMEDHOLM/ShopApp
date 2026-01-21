@@ -39,6 +39,8 @@ class AuthActivity : AppCompatActivity() {
                     Toast.makeText(this, "Logged in", Toast.LENGTH_LONG).show()
                     userLogin.text.clear()
                     userPass.text.clear()
+                    val intent = Intent(this, ItemsActivity::class.java)
+                    startActivity(intent)
                 }
                 else
                     Toast.makeText(this, "Login failed", Toast.LENGTH_LONG).show()

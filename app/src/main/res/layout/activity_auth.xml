@@ -29,6 +29,7 @@
         android:ems="10"
         android:inputType="text"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:hint="Enter login" />
@@ -40,6 +41,7 @@
         android:ems="10"
         android:inputType="textPassword"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:hint="Enter password" />
@@ -48,11 +50,11 @@
         android:id="@+id/button_auth"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#3117A8"
         android:text="Login"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:backgroundTint="#201E28"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/link_to_reg"
