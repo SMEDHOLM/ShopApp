@@ -2,9 +2,11 @@ package com.example.shopapp
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +29,16 @@ class ItemsAdapter(var  items: List<Item>, var context: Context) : RecyclerView.
         holder.price.text = items[position].price.toString()
         val imageId = context.resources.getIdentifier(items[position].image, "drawable", context.packageName)
         holder.image.setImageResource(imageId)
+
+        holder.btn.setOnClickListener {
+            val intent = Intent(context, ItemActivity::class.java)
+            intent.putExtra("itemTitle", items[position].title)
+            intent.putExtra("itemText", items[position].text)
+            intent.putExtra("itemPrice", items[position].price.toString())
+            intent.putExtra("itemImage", items[position].image)
+            context.startActivity(intent)
+
+        }
     }
 
     override fun getItemCount(): Int {
@@ -38,5 +50,7 @@ class ItemsAdapter(var  items: List<Item>, var context: Context) : RecyclerView.
         val title: TextView = view.findViewById(R.id.item_list_title)
         val desc: TextView = view.findViewById(R.id.item_list_desc)
         val price: TextView = view.findViewById(R.id.item_list_price)
+
+        val btn: Button = view.findViewById(R.id.item_list_button)
     }
 }
